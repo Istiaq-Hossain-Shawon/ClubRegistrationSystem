@@ -72,14 +72,14 @@ public class ClubRegistrationSystem {
     }
     
     public void assignStudentsRandomly() {
-        for (int i = 0; i < activityCount; i++) {
+        for (int i = 1; i < activityCount; i++) {
             Student student = students[randomNumber(studentCount)];
             registerStudent(student, activities[i]);
         }
         
-        for (int i = 0; i < studentCount; i++) {
+        for (int i = 1; i < studentCount; i++) {
             int howMany = 1 + randomNumber(4);
-            for (int j = 0; j < howMany; j++) {
+            for (int j = 1; j < howMany; j++) {
                 Activity activity = activities[randomNumber(activityCount)];
                 registerStudent(students[i], activity);
             }
