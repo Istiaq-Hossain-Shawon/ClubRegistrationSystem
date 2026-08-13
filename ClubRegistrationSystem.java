@@ -70,5 +70,60 @@ public class ClubRegistrationSystem {
         studentCount++;
         return true;
     }
+    
+    public void assignStudentsRandomly() {
+        for (int i = 0; i < activityCount; i++) {
+            Student student = students[randomNumber(studentCount)];
+            registerStudent(student, activities[i]);
+        }
+        
+        for (int i = 0; i < studentCount; i++) {
+            int howMany = 1 + randomNumber(4);
+            for (int j = 0; j < howMany; j++) {
+                Activity activity = activities[randomNumber(activityCount)];
+                registerStudent(students[i], activity);
+            }
+        }
+    }
+    // Registers one student for one activity using a suitable mode.
+    private boolean registerStudent(Student student, Activity activity) {
+        String mode = chooseMode(student, activity);
+        if (mode == null) {
+            return false;
+        }
+        return student.addRegistration(activity, mode);
+    }
+
+    private String chooseMode(Student student, Activity activity) {
+        boolean campusIsPossible = activity.hasMode(student.getCampus());
+        boolean onlineIsPossible = activity.hasMode(ONLINE);
+
+        if (campusIsPossible && onlineIsPossible) {
+            if (randomNumber(2) == 0) {
+                return ONLINE;
+            }
+            return student.getCampus();
+        }
+        if (onlineIsPossible) {
+            return ONLINE;
+        }
+        if (campusIsPossible) {
+            return student.getCampus();
+        }
+        return null;   
+    }
+
+    private int randomNumber(int limit) {
+        return (int) (Math.random() * limit);
+    }
+
+    public Activity findActivity(String activityId) {
+        for (int i = 0; i < activityCount; i++) {
+            if (activities[i].getActivityId().equals(activityId)) {
+                return activities[i];
+            }
+        }
+        return null;
+    }
  
 }
