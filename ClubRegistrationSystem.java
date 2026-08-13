@@ -52,5 +52,14 @@ public class ClubRegistrationSystem {
         }
         return students[index];
     }
+       // Adds one activity to the system
+    public boolean addActivity(Activity activity) {
+        if (activityCount >= MAX_ACTIVITIES) {
+            return false;
+        }
+        activities[activityCount] = activity;
+        activityCount++;
+        return true;
+    }
  
 }
