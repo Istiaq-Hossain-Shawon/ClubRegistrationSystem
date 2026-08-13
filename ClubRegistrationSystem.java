@@ -172,5 +172,19 @@ public class ClubRegistrationSystem {
         }
         System.out.println("Total number of activities that required a check-in: " + total);
     }
+    public void showTask5() {
+        printTaskTitle(5);
+        System.out.println("Activities that require a check-in but no competition:");
+        int total = 0;
+        for (int i = 0; i < activityCount; i++) {
+            if (activities[i].getRequiresCheckIn() && !activities[i].getHasCompetition()) {
+                printActivityLine(activities[i]);
+                total++;
+            }
+        }
+        System.out.println("Total number of activities that required a check-in "
+                + "but without a competition: " + total);
+    }
+
  
 }
