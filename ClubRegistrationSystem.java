@@ -198,6 +198,20 @@ public class ClubRegistrationSystem {
             System.out.println();
         }
     }
+     public void showTask7(Student myself) {
+        printTaskTitle(7);
+        System.out.println("Activities that I select:");
+        for (int i = 0; i < myself.getRegistrationCount(); i++) {
+            Registration registration = myself.getRegistration(i);
+            Activity activity = registration.getActivity();
+            System.out.println("Activity selection - " + activity.getName()
+                    + " [" + activity.getActivityId() + "]   "
+                    + registration.getMode()
+                    + "   Student: " + myself.getFullName() + " [" + myself.getId() + "]");
+        }
+        System.out.println("The number of activities that I selected: "
+                + myself.getRegistrationCount());
+    }
 
    
 
