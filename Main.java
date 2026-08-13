@@ -27,7 +27,15 @@ public class Main {
         // Assign the students to the activities randomly
         system.assignStudentsRandomly();
 
-        
+        // Display the output from Task 1 to Task 8
+        system.showTask1();
+        system.showTask2();
+        system.showTask3();
+        system.showTask4();
+        system.showTask5();
+        system.showTask6();
+        system.showTask7(myself);
+        system.showTask8(ClubRegistrationSystem.AUCKLAND, "A106");
     }
 
     // Adds the six activities of the test data to the system
