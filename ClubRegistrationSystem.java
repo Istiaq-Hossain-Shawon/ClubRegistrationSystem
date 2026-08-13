@@ -185,6 +185,21 @@ public class ClubRegistrationSystem {
         System.out.println("Total number of activities that required a check-in "
                 + "but without a competition: " + total);
     }
+    
+    public void showTask6() {
+        printTaskTitle(6);
+        System.out.println("All students registered:");
+        for (int i = 0; i < studentCount; i++) {
+            Student student = students[i];
+            System.out.println(student.toString());
+            for (int j = 0; j < student.getRegistrationCount(); j++) {
+                System.out.println("  - " + student.getRegistration(j).toString());
+            }
+            System.out.println();
+        }
+    }
+
+   
 
  
 }
