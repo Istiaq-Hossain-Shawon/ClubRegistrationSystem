@@ -61,5 +61,14 @@ public class ClubRegistrationSystem {
         activityCount++;
         return true;
     }
+     // Adds one student to the system
+    public boolean addStudent(Student student) {
+        if (studentCount >= MAX_STUDENTS) {
+            return false;
+        }
+        students[studentCount] = student;
+        studentCount++;
+        return true;
+    }
  
 }
