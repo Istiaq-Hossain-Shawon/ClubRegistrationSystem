@@ -127,7 +127,7 @@ public class ClubRegistrationSystem {
     }
     private void printTaskTitle(int taskNumber) {
         System.out.println();
-        System.out.println("-------------- Task " + taskNumber + " ----------------------");
+        System.out.println("-----  Task " + taskNumber + " --------");
     }
 
     private void printActivityLine(Activity activity) {
