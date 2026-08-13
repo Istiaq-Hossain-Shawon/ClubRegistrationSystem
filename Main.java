@@ -12,7 +12,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-         
+        // Create the system
+        ClubRegistrationSystem system =
+                new ClubRegistrationSystem("Massey University Club Activity Registration System");
+
+        // Add the test data to the  system
+        addActivities(system);
+        addStudents(system);
+
+        //   Add myself to the system as a student, with my real name and my real ID
+        Student myself = new Student(MY_ID, MY_FIRST_NAME, MY_LAST_NAME, MY_CAMPUS);
+        system.addStudent(myself);
+
+        // Assign the students to the activities randomly
+        system.assignStudentsRandomly();
+
+        
     }
 
     // Adds the six activities of the test data to the system
