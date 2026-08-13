@@ -125,5 +125,52 @@ public class ClubRegistrationSystem {
         }
         return null;
     }
+    private void printTaskTitle(int taskNumber) {
+        System.out.println();
+        System.out.println("-------------- Task " + taskNumber + " ----------------------");
+    }
+
+    private void printActivityLine(Activity activity) {
+        System.out.println("Activity -  " + activity.getShortText());
+    }
+
+    public void showTask1() {
+        printTaskTitle(1);
+        System.out.println("System Full Name: " + systemName);
+    }
+
+    public void showTask2() {
+        printTaskTitle(2);
+        System.out.println("All Activities Details:");
+        for (int i = 0; i < activityCount; i++) {
+            System.out.println(activities[i].toString());
+        }
+    }
+
+    public void showTask3() {
+        printTaskTitle(3);
+        System.out.println("Activities that belong to Sport category:");
+        int total = 0;
+        for (int i = 0; i < activityCount; i++) {
+            if (activities[i].hasCategory("Sport")) {
+                printActivityLine(activities[i]);
+                total++;
+            }
+        }
+        System.out.println("Total matching activities in Sport category: " + total);
+    }
+
+    public void showTask4() {
+        printTaskTitle(4);
+        System.out.println("Activities that require a check-in:");
+        int total = 0;
+        for (int i = 0; i < activityCount; i++) {
+            if (activities[i].getRequiresCheckIn()) {
+                printActivityLine(activities[i]);
+                total++;
+            }
+        }
+        System.out.println("Total number of activities that required a check-in: " + total);
+    }
  
 }
